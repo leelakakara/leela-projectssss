@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="dispaly data">
+    <aura:attribute name = "message" type = "integer" default="256325" />
+    
+</aura:event>

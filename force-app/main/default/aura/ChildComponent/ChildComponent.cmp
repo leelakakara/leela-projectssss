@@ -1,0 +1,7 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name="parentData" type="string"/>
+    <aura:handler name="lightningcmpEvent1"  event="c:LightningCmpEvent1" action="{!c.HandleCmpEvent1}"/>
+    <lightning:card>
+        {!v.parentData}
+    </lightning:card>
+</aura:component>

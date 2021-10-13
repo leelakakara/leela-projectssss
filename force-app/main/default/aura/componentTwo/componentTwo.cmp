@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:handler event = "c:componentEvent" action = "{!c.handleComponentEvent}"/>
+    <aura:registerEvent name = "AppEvent" type = "c.cmpEvent2"/>
+    <aura:attribute name = "childData" type = "String"/>
+    <aura:attribute name = "phoneNum" type = "Integer"/>
+    <lightning:card>
+        <lightning:input name="Text_phone" class="slds-var-m-around_small slds-var-p-around_small"
+                     value="{!v.phoneNum }" 
+                     placeholder="Enter your number..." 
+                     label="Phone Number" size="20" onchange="{!c.callcomponentone}"/>
+        <div class="slds-var-p-around_small">Name: {!v.childData}</div>
+    </lightning:card>  
+</aura:component>

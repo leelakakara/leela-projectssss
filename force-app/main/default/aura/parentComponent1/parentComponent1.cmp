@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="input1" type="string" />
+    <aura:attribute name="input2" type="string" />
+    
+    
+    <lightning:button label="SUBMIT" onclick="{!c.callChildMethod}"/>
+    <lightning:input name="fstinput" value="{!v.input1}" placeholder="Enter First Name"/>
+    <lightning:input name="lstinput" value="{!v.input2}" placeholder="Enter Last Name"/>
+    <c:childComponent1 aura:id="childCmp"></c:childComponent1>
+    
+        <span>{!v.fullDetails.input1}</span>
+        <span>{!v.fullDetails.input2}</span>
+        // hello this is leeela
+       
+</aura:component>

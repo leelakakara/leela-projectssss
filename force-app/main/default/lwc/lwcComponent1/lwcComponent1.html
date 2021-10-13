@@ -1,0 +1,31 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-col slds-size_6-of-12 first_col">
+                <h1>Fill The Follwing Form</h1>
+                <div class='form-div'>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-col slds-size_6-of-12 ">
+                            <lightning-input type='text' name='fstName' onchange={handleData} label='First Name' placeholder="Enter First Name Here" class='fn'></lightning-input>
+                        </div>
+                        <div class="slds-col slds-col slds-size_6-of-12 ">
+                            <lightning-input type='text' name='lstName' onchange={handleData} label='Last Name' placeholder="Enter Last Name Here" class="ln"></lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-col slds-size_6-of-12 ">
+                            <lightning-input type='number' name='tel'  onchange={handleData} label='Phone Number' placeholder="Enter Phone Number Here" class='ph'></lightning-input>
+                        </div>
+                        <div class="slds-col slds-col slds-size_6-of-12 ">
+                            <lightning-input type='email' name='email' onchange={handleData} label='Email' placeholder="Enter Email Here" class="email"></lightning-input>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slds-col slds-size_6-of-12">
+                <c-lwc-component2></c-lwc-component2>
+            </div>
+        </div>  
+    </lightning-card>
+</template>

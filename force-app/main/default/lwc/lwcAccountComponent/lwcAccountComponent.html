@@ -1,0 +1,85 @@
+<template>  
+    <lightning-card title='display List Of Accounts' icon-name="standard:account">
+        <div class="slds-text-align_right">
+            <lightning-button variant="destrctive" label="Delete" title="Delete" class="slds-var-m-around_medium" onclick={handleDelete}>Delete</lightning-button>
+        </div>  
+        <table  class='slds-table slds-table_bordered' >
+        <thead>
+            <tr class="slds-line-height_reset" >
+                <th class="slds-text-align_center" scope="row">
+                    <span id="column-group-header" class="slds-assistive-text">Choose a row</span>
+                    <div class="slds-th__action slds-th__action_form">
+                        <div class="slds-checkbox">
+                            <input type="checkbox" name="options" id="checkbox-unique-id" value="checkbox-unique-id-309" tabindex="0"  />
+                            <label class="slds-checkbox__label" for="checkbox-unique-id" id="check-select-all-label">
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label slds-assistive-text">Select All</span>
+                            </label>
+                        </div> 
+                    </div>
+                </th>
+                <th aria-label="Name"  scope="col">
+                        <div class="slds-grid slds-has-flexi-truncate slds-grid_vertical-align-center">
+                            <span class="slds-truncate" title="Name">Name</span> 
+                        </div>                
+                </th>
+                <th aria-label="Account Number"  scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Name">Account Number</span>
+                            
+                        </div>
+                </th>
+                <th aria-label="Industry"  scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Name">Industry</span>
+                        </div>
+                </th>
+                <th aria-label="Type"  scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Name">Type</span>
+                            
+                        </div> 
+                </th>
+                <th aria-label="Rating"  scope="col"> 
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Name">Rating</span>
+                            
+                        </div>  
+                </th>
+                <th aria-label="Phone"  scope="col">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span title="Name">Phone</span>
+                        </div>   
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template if:true={accountsPerPage}>
+            <template for:each={accountsPerPage} for:item="account">
+                <tr key={account.id} aria-selected="true">
+                    <td class="slds-text-align_center" role="gridcell">
+                        <div class="slds-checkbox">
+                            <input type="checkbox" name="options" id={account.Name}  tabindex="0"  />
+                            <label class="slds-checkbox__label" for={account.Name} id={account.Name}>
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label slds-assistive-text">Select item</span>
+                            </label>
+                        </div>
+                    </td>
+                    <td><a href='#' key={account.id}>{account.Name}</a></td>
+                    <td>{account.AccountNumber}</td>
+                    <td>{account.Industry}</td>
+                    <td>{account.Type}</td>
+                    <td>{account.Rating}</td>
+                    <td>{account.Phone}</td>
+                </tr>
+            </template>
+            </template>
+        </tbody>       
+    </table>
+    <div slot='footer'>
+       <c-pagination records={accounts} onupdate={updateAccountHandler}></c-pagination> 
+    </div>    
+
+</lightning-card>
+</template>

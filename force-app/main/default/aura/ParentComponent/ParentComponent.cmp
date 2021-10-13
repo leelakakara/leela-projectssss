@@ -1,0 +1,11 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name="inputName" type="String" />
+    <aura:registerEvent name="lightningcmpEvent1" type="c:LightningCmpEvent1" />
+    <lightning:card>
+        <lightning:layout>
+            <lightning:input name="textinput" value="{!v.inputName}" placeholder="Enter Name Here" size="50" onchange="{!displayParentdatainChild}"/>
+        </lightning:layout>
+    </lightning:card>
+    <c:ChildComponent/>	
+  
+</aura:component>

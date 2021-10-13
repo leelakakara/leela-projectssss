@@ -1,0 +1,8 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:method name="displayingSampleData" action="{!c.getData}" access="public"> 
+       	<aura:attribute name="input1" type="string" />
+    	<aura:attribute name="input2" type="string" />
+    </aura:method>
+    
+    
+</aura:component>

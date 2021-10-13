@@ -1,0 +1,106 @@
+<template>  
+    <lightning-card title='display List Of Accounts' icon-name="standard:account">
+        <div class="slds-text-align_right">
+            <lightning-button variant="destructive" label="Delete" onclick={handleDelete} disabled={Buttontrue} icon-position="right"  icon-name="action:delete" title="Delete"  class="slds-var-m-around_medium enableButton">Delete</lightning-button>
+        </div>
+        <div class='slds-var-m-around_medium'>
+        <table  class='slds-table slds-table_bordered accountSldsTable' >
+        <thead style="height: auto;">
+            <tr>
+                <td class="slds-text-align_center"> 
+                    <div class="slds-th__action slds-th__action_form">
+                        <div class="slds-checkbox">
+                            <lightning-input  type="checkbox"   onchange={getSelectedIds} checked={checkall}></lightning-input>
+                            <!--<input type="checkbox" class="checkAllclass"  id='checkbox-unique-id' onclick={checkall}/>
+                            <label class="slds-checkbox__label" for="checkbox-unique-id">
+                                <span class="slds-checkbox_faux"></span>
+                                <span class="slds-form-element__label slds-assistive-text">Select All</span>
+                            </label>-->
+                        </div> 
+                    </div>
+                </td>
+                <td aria-label="Name" >
+                        <div class="slds-grid slds-has-flexi-truncate slds-grid_vertical-align-center">
+                            <span class="slds-truncate" title="Name">Name</span> 
+                        </div>                
+                </td>
+                <td aria-label="Account Number" >
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Name">Account Number</span>
+                            
+                        </div>
+                </td>
+                <td aria-label="Industry"  >
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Name">Industry</span>
+                        </div>
+                </td>
+                <td aria-label="Type"  >
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Name">Type</span>
+                            
+                        </div> 
+                </td>
+                <td aria-label="Rating" > 
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span class="slds-truncate" title="Name">Rating</span>
+                            
+                        </div>  
+                </td>
+                <td aria-label="Phone" >
+                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                            <span title="Name">Phone</span>
+                        </div>   
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <template if:true={showRecords}>
+            <template for:each={showRecords} for:item="account"> 
+                <tr key={account.id}  >
+                    <td class="slds-text-align_center">
+                        <div class="slds-checkbox">
+                            <lightning-input type='checkbox' checked={account.ischecked} class="checkbox" data-id="checkbox"></lightning-input>
+                            <!--<input type="checkbox" name="options" id='{account.id}' />
+                            <label class="slds-checkbox__label" for='{account.id}' >
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label slds-assistive-text">Select item</span>
+                            </label>-->
+                        </div>
+                    </td>
+                    <td>{account.Name}</a></td>
+                    <td>{account.AccountNumber}</td>
+                    <td>{account.Industry}</td>
+                    <td>{account.Type}</td>
+                    <td>{account.Rating}</td>
+                    <td>{account.Phone}</td>
+                </tr>
+            </template>
+            </template>
+        </tbody>       
+    </table>
+    <div slot='footer'>
+        <div class="slds-grid slds-m-vertical_large">
+            <div class="slds-col slds-size_6-of-12">
+                <lightning-layout>
+                    <lightning-layout-item>
+                        <lightning-button  class='prevbtn' label="Previous" icon-name="utility:chevronleft" onclick={priviousHandler} disabled={disablePrevious}>
+                        </lightning-button>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="grow"> 
+                        <p class="slds-text-align_center">Displaying {currentPage} Of {totalPages} Page</p>
+                    </lightning-layout-item>
+                    <lightning-layout-item>
+                        <lightning-button  class='nextbtn' label="Next" icon-name="utility:chevronright" onclick={nextHandler} icon-position="right" disabled={disableNext}>   
+                        </lightning-button>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </div>
+            <div class="slds-col slds-size_6-of-12 slds-text-align_right">
+               <p class='slds-text-align_right'>PAGE SIZE : {start} TO {end}</p>
+            </div>
+    </div>
+    </div> 
+</div>         
+</lightning-card>
+</template>

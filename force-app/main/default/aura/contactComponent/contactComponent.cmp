@@ -1,0 +1,32 @@
+<aura:component implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name="recordId" type="id"/>
+	<lightning:card>
+        <lightning:layout>
+            
+                <lightning:recordEditForm recordId="{!v.recordId}" objectApiName="Contact">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col"> <lightning:InputField fieldName="OwnerId" /></div>
+                        <div class="slds-col"><lightning:InputField fieldName="Phone" /></div>
+                    </div>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col"> <lightning:InputField fieldName="Name" /></div>
+                        <div class="slds-col"><lightning:InputField fieldName="HomePhone" /></div>
+                    </div>
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col"> <lightning:InputField fieldName="AccountId" label="Account Name"/></div>
+                        <div class="slds-col"> <lightning:InputField fieldName="MobilePhone"/></div>
+                    </div>
+                     <div class="slds-grid slds-gutters">
+                        <div class="slds-col"><lightning:InputField fieldName="Title" /></div>
+                        <div class="slds-col"><lightning:InputField fieldName="OtherPhone" /></div>
+                    </div>
+                  <div class="slds-grid slds-gutters">
+                      <div class="slds-col">
+                          <lightning:button variant="Brand" label="Update" name="Update" type="Submit"/>
+                      </div>
+                  </div>
+               </lightning:recordEditForm>     
+                 
+        </lightning:layout>
+    </lightning:card>
+</aura:component>

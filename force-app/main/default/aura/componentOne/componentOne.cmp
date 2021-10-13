@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    <aura:attribute name = "textdata" type = "String"/>
+    <aura:handler event = "c:cmpEvent2" action = "{!c.callcmpEvent1}"/>
+    <aura:registerEvent name = "CmpEvent" type = "c.componentEvent"/>
+    <aura:attribute  name="phonedata" type="Integer"/>
+    <lightning:card class="slds-var-m-around_small slds-var-p-around_small">
+	<lightning:input name="Text_input" class="slds-var-m-around_small slds-var-p-around_small"
+                     value="{!v.textdata }" 
+                     placeholder="type your name..." 
+                     label="Name" onchange="{!c.callParent}" size="20"/>
+    <div class="slds-var-p-around_small">Number: {!v.phonedata}</div>
+    </lightning:card>
+</aura:component>
