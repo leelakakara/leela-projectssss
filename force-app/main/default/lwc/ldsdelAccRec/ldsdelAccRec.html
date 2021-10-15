@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Delete Account Record" class="slds-var-m-around_medium" icon-name="standard:account">
+        <template if:true={accounts}>          
+                <template for:each={accounts} for:item="acc">
+                    <lightning-layout key={acc.Id} class="slds-var-m-around_small">
+                        <lightning-layout-item flexibility="grow" style="color: rgb(42, 130, 156);font-size: 18px;font-weight: 500;">{acc.Name}</lightning-layout-item>
+                        <lightning-layout-item>
+                            <lightning-button icon-name="action:delete" 
+                            onclick={DeleteAccount}  
+                            name={acc.Id}></lightning-button>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </template>            
+        </template>
+    </lightning-card>
+</template>

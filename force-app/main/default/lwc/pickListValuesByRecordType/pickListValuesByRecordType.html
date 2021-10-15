@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Get PickList Values By RecordType" class="slds-var-m-around_medium" icon-name=standard:account>
+        <template if:true={listModel}>
+           
+                <lightning-layout class="slds-var-m-around_medium">
+                    <lightning-tree
+                        items={listModel}
+                        header="Account Picklists"
+                    ></lightning-tree>
+                </lightning-layout>
+ 
+        </template>
+       
+    </lightning-card>
+</template>
