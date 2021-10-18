@@ -21,6 +21,9 @@ export default class LwcContactListItem extends LightningElement {
 
         const selectEvent = new CustomEvent('select', {
             detail: this.dt,bubbles:true,composed:true
+           /* detail:{
+                records:this.dt,
+            }*/
            
         });
         console.log("after"+this.dt);

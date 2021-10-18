@@ -1,0 +1,20 @@
+<template>
+  <lightning-card>
+        <lightning-input
+        label="Priority Only"
+        type="checkbox"
+        onchange={handleCheckboxChange}
+    ></lightning-input>
+    <ul class="slds-m-top_x-small">
+        <template for:each={filterFormData} for:item="data">
+            <li key={data.id}>
+                <div class="slds-p-vertical_xx-small">
+                    <p>Description : {data.description}</p>
+                    <p>Priority : {data.priority}</p>
+                </div>
+            </li>
+        </template> 
+    </ul>
+  </lightning-card>
+    
+</template>
