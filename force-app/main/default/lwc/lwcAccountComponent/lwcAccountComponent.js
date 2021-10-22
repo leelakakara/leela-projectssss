@@ -7,7 +7,7 @@ export default class LwcAccountComponent extends LightningElement {
     accountsPerPage;
     selectedAccountIds=[];
     selectedRows;
-
+    
     @wire(getAccounts)
     wiredAccounts({error,data}){
         if(data){

@@ -17,7 +17,7 @@ export default class LwcComponent1 extends LightningElement {
             LastName:this.LastName,
             PhoneNumber:this.PhoneNumber,
             Email:this.Email
-        };
+        }; 
         this.template.querySelector('c-lwc-component2').parentData(resp);
     }
 }

@@ -1,14 +1,11 @@
 <template>
     <lightning-card title="LWC Publisher Component">
-       
             <lightning-layout>
                 <lightning-layout-item>
                 <lightning-input type="text" class="slds-m-around_small" label="Full Name" placeholder="Enter Name Here" value={name} onchange={handlenamechanges}></lightning-input>
                 <lightning-input type="email"  class="slds-m-around_small" label="Email Id" placeholder="Enter Email Here" value={email} onchange={handleemailchanges}></lightning-input>
                 <lightning-button class="slds-align_absolute-center" label="submit" onclick={clickToSubmit}>Submit</lightning-button>
             </lightning-layout-item>
-            </lightning-layout>
-           
-       
+            </lightning-layout> 
     </lightning-card>
 </template>

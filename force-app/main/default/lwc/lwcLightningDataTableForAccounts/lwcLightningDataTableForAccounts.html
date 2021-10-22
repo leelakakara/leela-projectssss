@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Account Records" icon-name="standard:account">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <lightning-input type="search"   
+                                 name="searchkeyword" 
+                                 value={searchkey} 
+                                 placeholder="Enter Account Here"
+                                 onchange={getAccswithkeyword} class="slds-m-around_small">
+             </lightning-input>
+            </div>
+            <div class="slds-col"></div>
+        </div>    
+        <div class="slds-m-around_medium">
+            <template if:true={Accounts}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={Accounts}
+                    columns={columns}
+                    onsave={saveAccountData}  draft-values={draftValues} 
+                    onrowselection={getSelectedAccounts} onrowaction={navigateToRecordViewPage} >
+                </lightning-datatable>
+            </template>
+            <template if:true={error}>
+                <!-- handle Apex error -->
+            </template>
+        </div>
+       <c-accounts-contacts-data></c-accounts-contacts-data>
+    </lightning-card>
+</template>

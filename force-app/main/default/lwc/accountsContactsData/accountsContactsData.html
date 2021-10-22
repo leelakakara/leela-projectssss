@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Contacts" icon-name="standard:contact">
+        <div if:true={contactList}>
+              text      
+            <div class="slds-grid slds-gutters" >
+                <template for:each={contactList} for:item='item'>
+                    <div class="slds-col"  key={item.id} >
+                        <div style="border-right: 5px solid rgb(95, 23, 23);font-size:14px;font-weight:500;color:rgb(52, 106, 151)">
+                            <p class="slds-m-around_small">Contact Name : {item.Name}</p>
+                            <p class="slds-m-around_small">Email : {item.Email}</p>
+                            <p class="slds-m-around_small">Phone : {item.Phone}</p>
+                        </div>
+                    </div>
+                </template>
+                </div>
+                
+        </div>  
+    </lightning-card>
+</template>
