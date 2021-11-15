@@ -1,0 +1,92 @@
+<template>
+    <lightning-card title="Fetach Object Related Data">
+    <div style="width: 80%;margin:auto;font-size:medium;color:rgb(173, 77, 90);font-weight:500">
+    <lightning-card>
+        <p>Select Object from dropdown:</p>        
+        <lightning-combobox 
+            name="Objects"
+            label={label}
+            value={value}
+            placeholder="Select Object"
+            options={statusOptions}
+            onchange={handleChange}
+            style="width:50%"
+            required
+            >
+        </lightning-combobox>
+        </lightning-card>
+        <c-lwc-task-one-child onretreive={HandleSelectedFields}></c-lwc-task-one-child>
+        
+        <div class="slds-grid">
+            
+            <div class="slds-col slds-size_4-of-12">
+                <p>Maximun Records To Display</p>
+                    <lightning-combobox 
+                        name="limit"
+                        label={label}
+                        value={value}
+                        placeholder="Select limit"
+                        options={limitdropdown} onchange={HandleLimit}   
+                    >
+                    </lightning-combobox>
+                
+            </div>
+            <div class="slds-col slds-size_2-of-12"></div>
+           
+            <div class="slds-col slds-size_6-of-12">
+                <p>Sort As</p>
+                    <div class="slds-grid">
+                        <div class="slds-col slds-size_3-of-12" >
+                                <span class="slds-radio">
+                                    <input type="radio" id="Ascending" value="Ascending" name="default" onchange={handlesort}/>
+                                    <label class="slds-radio__label" for="Ascending">
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">Ascending</span>
+                                    </label>
+                                </span> 
+                        </div>
+                        <div class="slds-col slds-size_3-of-12" >
+                            <span class="slds-radio">
+                                <input type="radio" id="Descending" value="Descending" name="default" onchange={handlesort}/>
+                                <label class="slds-radio__label" for="Descending">
+                                <span class="slds-radio_faux"></span>
+                                <span class="slds-form-element__label">Descending</span>
+                                </label>
+                            </span>
+                        </div>  
+                    </div>
+                
+            </div>
+        
+    </div>
+        <p>Selected Fields</p>
+            <lightning-textarea 
+                name="SelectedFields"
+                value={finalQuery}
+                readonly>
+            </lightning-textarea>
+    <!--<div style="text-align: center;margin:10px;">
+        <lightning-button label="Execute Query" variant="destructive" icon-name="utility:download" icon-position="left" onclick={HandleQuery}>Execute Query</lightning-button>
+        
+    </div>-->
+    <div style="text-align: center;margin:10px;">
+        <lightning-button label="Execute Query" variant="destructive" icon-name="utility:download" icon-position="left" onclick={HandleQuery1}>Execute Query</lightning-button>
+        <!--<lightning-button label="Execute Query" variant="success" onclick={HandleQuery}>Execute Query</lightning-button>-->
+    </div>
+    <!--<template if:true={records}>
+    <p>Query Result</p>    
+        <lightning-datatable 
+                    key-field="Id"
+                    data={records}
+                    columns={recordColumns}
+                    min-column-width=200>
+        </lightning-datatable>
+    </template>-->
+    <div id='sfdctable' >
+        Query Result
+    </div> 
+            
+    </div>
+</lightning-card>
+</template>
+

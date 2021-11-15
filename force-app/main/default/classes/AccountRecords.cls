@@ -11,7 +11,7 @@ public class AccountRecords {
         @AuraEnabled
         public static map<id,List<contact>> AccwithContacts(list<string> accountIds){
             map<id,List<contact>> accWithRelatedCons=new map<id,List<Contact>>();
-            for(Account acc:[select Id,Name,(Select Name,email, Phone,AccountId FROM contacts) from Account where Id=:accountIds]){
+            for(Account acc:[select Id,Name,(Select Name,email, Phone FROM contacts) from Account where Id=:accountIds]){
                 accWithRelatedCons.put(acc.Id,acc.contacts);
             }
             return accWithRelatedCons;

@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        <div style="width:80%;margin:auto;font-size:medium;color:rgb(173, 77, 90);font-weight:bold">
+            <lightning-dual-listbox name="Fields" class="slds-m-around_small dual_listbox" label="Select Fields"
+            source-label="Available" selected-label="Selected" field-level-help="Select your preferred Fields"
+            options={selectFields} value={fieldsValue} onchange={handleSelectFields} >
+            </lightning-dual-listbox>
+        </div>
+
+    
+    </lightning-card>
+</template>

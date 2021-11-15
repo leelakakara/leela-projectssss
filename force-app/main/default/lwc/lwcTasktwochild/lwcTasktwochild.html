@@ -1,0 +1,25 @@
+<template>
+    <template  if:true={ContactRecords}>
+    <table class='slds-table slds-m-around_small' style="font-size:medium;color:rgb(74, 115, 126);font-weight:500;text-align:center" border="1">
+        <thead >
+            <tr  class="slds-line-height_reset">
+                <th style="background-color: blanchedalmond;text-align:center;">Name</th>
+                <th style="background-color: blanchedalmond;text-align:center;">Phone</th>
+                <th style="background-color: blanchedalmond;text-align:center;">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <template for:each={ContactRecords} for:item="con">
+                    <tr key={con.Id}  class="slds-line-height_reset" >
+                        <td style="text-align: center;">{con.Name}</td>
+                        <td style="text-align: center;">{con.Phone}</td>
+                        <td style="text-align: center;">{con.Email}</td>
+                    </tr>
+                </template>
+           
+            
+        </tbody>
+    </table>
+</template>
+</template>

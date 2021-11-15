@@ -97,41 +97,16 @@ export default class LwcLightningDataTableForAccounts extends NavigationMixin (L
         });
     }
     getSelectedAccounts(event){
-       
-
-
-        //console.log(this.AccountIds);
-        //alert(this.AccountIds);
-        
-        //console.log(accId);
-        //this.AccountId=event.detail.selectedRows;
-        //alert(this.AccountId);
-        /*let resp={
-            accId: this.AccountId
-            
-        }*/
-        //console.log("Ahdfjkdh"+resp.accId);
-        //console.log("Ahdfjkdh"+JSON.stringify(resp));
-
-
         if(event.detail.selectedRows != null && event.detail.selectedRows.length > 0){
-             var AccountIds=[];
+            var AccountIds=[];
             var listOfAccIds=event.detail.selectedRows;
-            //alert(JSON.stringify(listOfAccIds.id));
-            //alert(listOfAccIds);
             for(var i=0; i < listOfAccIds.length;i++){
                 AccountIds.push(listOfAccIds[i].Id);    
             }
-            console.log(AccountIds);
-            console.log(JSON.stringify(AccountIds));
+            
             this.template.querySelector('c-accounts-contacts-data').AccountWithContactData(AccountIds);
         }else{
             this.template.querySelector('c-accounts-contacts-data').AccountWithContactData(null);
-        }
-        
-   
-        //this.template.querySelector('c-accounts-contacts-data').AccountWithContactData(AccountIds);
-       
-            
+        }         
     }   
 }
